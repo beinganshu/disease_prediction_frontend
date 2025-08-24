@@ -15,7 +15,7 @@ if submitted:
     else:
         with st.spinner("Predicting diseases..."):
             try:
-                res = requests.post("http://localhost:8000/predict", json={"message": user_input})
+                res = requests.post("https://anxhu2004-symptom-backend.hf.space/predict", json={"message": user_input})
                 if res.status_code != 200:
                     st.error("No recognizable symptoms found.")
                 else:
@@ -32,3 +32,4 @@ if submitted:
 
             except Exception as e:
                 st.error("Backend not responding. Make sure FastAPI is running.")
+
